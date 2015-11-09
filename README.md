@@ -31,10 +31,9 @@ Client for VOIP CID push service available at AppStore
     Next add at your extensions, to call the macro above just before
     to ring your phone.
 
-    exten => <extension_number>,n,Macro(push-agi)
+    exten => EXTENSION_NUMBER,n,Macro(push-agi)
 
     1.5.2. Add the appstore account for each extension you want to receive
     push notifications from asterisk server, for that, use the asterisk cli:
 
-    *CLI> database put push <extension> <appstore_email_address>
-
+    *CLI> database put push EXTENSION APPSTORE_EMAIL_ADDRESS
