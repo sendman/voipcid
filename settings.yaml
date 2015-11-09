@@ -1,0 +1,11 @@
+# $Id: settings.yaml,v 1.2 2015/10/13 18:29:22 fabio Exp $
+
+appname: push_fastagi
+pidfile: '/usr/local/voipcid/agi/push_fastagi.pid'
+logfile: '/usr/local/voipcid/agi/push_fastagi.log'
+listen: '127.0.0.1'
+port: 8000
+fork: True
+certfile: '/usr/local/voipcid/agi/ssl/push.crt'
+disable_certificate: False
+url: "https://voip.rup.com.br:4443/push"
