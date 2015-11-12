@@ -8,5 +8,5 @@ port: 8000
 fork: True
 certfile: '/usr/local/push_client/ssl/push.crt'
 disable_certificate: True
-url: "https://voip.rup.com.br:4443/push"
-prefix: '55483343'    
+url: 'https://voip.rup.com.br:4443/push'
+prefix: ''
