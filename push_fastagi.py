@@ -67,14 +67,13 @@ class AGIClientHandler(StreamRequestHandler):
         agi_extension = '%s%s' % (conf['prefix'],self.env['agi_dnid'])
         host = os.uname()[1]
         callerId = self.env['agi_callerid']
-        userEmail = self.env['agi_arg_1']
         tm = self.env['agi_uniqueid']
-        if userEmail is not None and host is not None and callerId is not None and tm is not None:
+        if host is not None and callerId is not None and tm is not None:
             headers = {
                 'User-Agent' : 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)',
                 'Content-type': 'application/json'
             }
-            data = '{"submit": 1, "push": {"userEmail": "%s", "host": "%s", "receiver": "%s", "cid": "%s", "timestamp": "%s"}}' % (userEmail,host,agi_extension,callerId,tm)
+            data = '{"submit": 1, "push": {"host": "%s", "receiver": "%s", "cid": "%s", "timestamp": "%s"}}' % (host,agi_extension,callerId,tm)
             http = httplib2.Http(ca_certs=conf['certfile'], disable_ssl_certificate_validation=conf['disable_certificate'])
             try:
                 response, content = http.request(conf['url'], 'POST', body=data, headers=headers)
